@@ -62,5 +62,5 @@ jobs:
         with:
           app-name: ${{ inputs.webAppName }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{github.workspace}}/build.buildnumber.zip
+          package: ${{github.workspace}}/${{inputs.artifactName}}/build.buildnumber.zip
           #package: ${{github.workspace}}/artifact
