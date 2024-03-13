@@ -29,22 +29,20 @@ jobs:
         with:
           node-version: '14'
 
-      # - name: Access npm cache
-      #   uses: actions/cache@v4
-      #   id: cache-npm
-      #   with:
-      #     path: webAppCode/node_modules
-      #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+      - name: Access npm cache
+        uses: actions/cache@v4
+        id: cache-npm
+        with:
+          path: ${{github.workspace}}/webAppCode/node_modules
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
 
-      # - name: Install dependencies
-      #   if: steps.cache-npm.outputs.cache-hit != 'true'
-      #   run: npm ci ${{github.workspace}}
+      - name: Install dependencies
+        if: steps.cache-npm.outputs.cache-hit != 'true'
+        run: npm ci ${{github.workspace}}/webAppCode
 
       - name: Build
-        run: |
-          npm install
-          npm run build --if-present
-        # Remove the "path" property
+        run: npm run build
+        working-directory: ${{github.workspace}}/webAppCode
 
       - name: Zip artifact for deployment
         run: zip -r webAppCode.zip webAppCode
@@ -55,4 +53,6 @@ jobs:
           name: webAppCode
           path: webAppCode.zip
         
-        
+
+
+   
