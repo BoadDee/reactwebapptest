@@ -59,7 +59,7 @@ jobs:
         
 
   deploy_de:
-    uses: ./github/workflows/deploytemp.yml
+    uses: ./.github/workflows/deploytemp.yml
     needs: build
     with:
       environment: 'dev'
