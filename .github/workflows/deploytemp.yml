@@ -45,9 +45,9 @@ jobs:
           name: ${{ inputs.artifactName }}
           path: ${{github.workspace}}/build.buildnumber.zip
 
-      - name: Unzip artifact
-        run: unzip build.buildnumber.zip -d ${{github.workspace}}/artifact
-        #run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
+      # - name: Unzip artifact
+      #   run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
+      #   #run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
 
       - name: azure Login
         uses: azure/login@v1
@@ -62,4 +62,5 @@ jobs:
         with:
           app-name: ${{ inputs.webAppName }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{github.workspace}}/artifact
+          package: ${{github.workspace}}/build.buildnumber.zip
+          #package: ${{github.workspace}}/artifact
