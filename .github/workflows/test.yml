@@ -62,9 +62,9 @@ jobs:
     uses: ./.github/workflows/deploytemp.yml
     needs: build
     with:
-      environment: 'de'
-      artifactName: 'webAppcode'
-      webAppName: 'web-app-tst-dre'
+      environment: de
+      artifactName: webAppcode
+      webAppName: web-app-tst-dre
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
