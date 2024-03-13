@@ -45,8 +45,9 @@ jobs:
           name: ${{ inputs.artifactName }}
           path: ${{github.workspace}}/build.buildnumber.zip
 
-      # - name: Unzip artifact
-      #   run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
+      - name: Unzip artifact
+        run: unzip build.buildnumber.zip -d ${{github.workspace}}/artifact
+        #run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
 
       - name: azure Login
         uses: azure/login@v1
