@@ -62,7 +62,7 @@ jobs:
     uses: ./.github/workflows/deploytemp.yml
     needs: build
     with:
-      environment: 'dev'
+      environment: 'de'
       artifactName: 'webAppcode'
       webAppName: 'web-app-tst-dre'
     secrets:
