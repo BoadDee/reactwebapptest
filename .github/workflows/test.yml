@@ -47,13 +47,14 @@ jobs:
         working-directory: ${{github.workspace}}/webAppcode
 
       - name: Zip artifact for deployment
-        run: zip -r webAppCode.zip webAppcode
+        run: zip -r webAppCode.zip ${{github.workspace}}/webAppcode
+        # working-directory: ${{github.workspace}}/build
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
         with:
           name: webAppcode
-          path: webAppcode.zip
+          path: ${{github.workspace}}/webAppcode.zip
         
 
 
