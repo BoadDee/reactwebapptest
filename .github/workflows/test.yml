@@ -54,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: webAppcode
-          path: ${{github.workspace}}/WebApp.zip
+          path: ${{github.workspace}}/webApp.zip
         
 
   deploy_de:
