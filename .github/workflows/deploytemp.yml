@@ -46,7 +46,7 @@ jobs:
           #path: ${{github.workspace}}
 
       - name: Unzip artifact
-        run: unzip webApp.zip -d ${{github.workspace}}/artifact/${{ inputs.artifactName }}
+        run: unzip webApp.zip -d ${{github.workspace}}/artifact
         #run: unzip build.buildnumber.zip -d ${{github.workspace}}/artifact/${{ inputs.artifactName }}
       #   #run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
 
@@ -63,4 +63,4 @@ jobs:
         with:
           app-name: ${{ inputs.webAppName }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
-          package: ${{github.workspace}}/artifact/${{ inputs.artifactName }}
+          package: ${{github.workspace}}/artifact
