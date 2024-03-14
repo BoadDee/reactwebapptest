@@ -47,6 +47,7 @@ jobs:
 
       - name: Unzip artifact
         run: unzip webApp.zip -d ${{github.workspace}}/artifact/${{ inputs.artifactName }}
+        #run: unzip build.buildnumber.zip -d ${{github.workspace}}/artifact/${{ inputs.artifactName }}
       #   #run: unzip ${{github.workspace}}/build.buildnumber.zip -d ${{github.workspace}}/artifact
 
       - name: azure Login
