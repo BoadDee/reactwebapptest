@@ -24,6 +24,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: install SQLite3
+        run: sudo apt-get install sqlite3 libsqlite3-dev
+
+        
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
