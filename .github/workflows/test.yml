@@ -27,8 +27,7 @@ jobs:
 
       - name: install SQLite3
         run: |
-          sudo apt-get update
-          sudo apt-get install sqlite3
+          pip install pysqlite3-binary
           sqlite3 --version
 
 
