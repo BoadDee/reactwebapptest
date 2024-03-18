@@ -4,7 +4,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "@types/react": "^18.2.66",
@@ -24,6 +23,12 @@
   },
   "eslintConfig": {
     "extends": "react-app"
+
+  "jest": {
+    "setupFilesAfterEnv": [
+      "@testing-library/jest-dom/extend-expect"
+    ],
+  }
   },
   "browserslist": {
     "production": [
@@ -38,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
     "gh-pages": "^3.1.0"
   }
 }
