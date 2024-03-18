@@ -1,6 +1,6 @@
 {
   "name": "to-do-list-app-in-react",
-  "homepage": "http://dreschool.azurewebsites.net/todolist-app-react",
+  "homepage": "http://dare-web-app.azurewebsites.net",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
