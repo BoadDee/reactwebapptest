@@ -70,7 +70,7 @@ jobs:
     with:
       environment: de
       artifactName: webAppcode
-      webAppName: app-dre-test
+      webAppName: dreschool
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
