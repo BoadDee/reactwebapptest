@@ -64,3 +64,4 @@ jobs:
           app-name: ${{ inputs.webAppName }}
           publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{github.workspace}}/artifact
+          startUpCommand: 'npm run start'
