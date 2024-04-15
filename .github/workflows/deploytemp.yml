@@ -62,7 +62,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: ${{ inputs.webAppName }}
-          azureSubscription: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
-          #publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
+          publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{github.workspace}}/artifact
-          startUpCommand: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
+          startup-command: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
