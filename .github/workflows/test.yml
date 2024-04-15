@@ -25,12 +25,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: install SQLite3
-        run: |
-          pip install pysqlite3-binary
-          sqlite3 --version
-
-
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
@@ -70,7 +64,7 @@ jobs:
     with:
       environment: de
       artifactName: webAppcode
-      webAppName: dreschool
+      webAppName: app-dre-test
     secrets:
       AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
       AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
