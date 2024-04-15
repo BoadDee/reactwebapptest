@@ -64,4 +64,6 @@ jobs:
           app-name: ${{ inputs.webAppName }}
           #publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
           package: ${{github.workspace}}/artifact
-          startup-command: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
+          startup-command: 'npm run start'
+
+          #startup-command: 'pm2 serve /home/site/wwwroot --no-daemon --spa'
