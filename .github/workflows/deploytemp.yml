@@ -1,5 +1,5 @@
 
-name: JavaScript CI
+name: react-ci
 
 on:
   push:
