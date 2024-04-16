@@ -16,6 +16,14 @@ on:
         required: true
         type: string
         description: 'The name of the web app to deploy to'
+      appFolder:
+        required: true
+        type: string
+        description: 'The folder of the app to deploy'
+      buildNumber:
+        required: true
+        type: string
+        description: 'The build number of the app to deploy'
       
     secrets:
       AZURE_CLIENT_ID:
@@ -36,14 +44,17 @@ jobs:
     runs-on: ubuntu-latest
     environment: ${{ inputs.environment }}
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+      # - name: Checkout repository
+      #   uses: actions/checkout@v2
 
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: ${{ inputs.artifactName }}
-          path: ${{github.workspace}}/${{ inputs.artifactName }}
+          name: ${{ inputs.artifactName }}-${{ inputs.buildNumber }}
+          path: ${{github.workspace}}/${{ inputs.appFolder }}
+
+      - name: Test Artifact Download
+        run: ls -R
 
       # - name: Unzip artifact
       #   run: unzip webApp.zip -d ${{github.workspace}}/artifact
