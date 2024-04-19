@@ -42,6 +42,6 @@ jobs:
           AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
 
       - name: Key vault access
-        uses: actions/get-keyvault-secrets@v1
+        uses: azure/get-keyvault-secrets@v1
         with:
           keyvault: kv-dre-test
