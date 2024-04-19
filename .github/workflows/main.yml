@@ -1,0 +1,47 @@
+name: kv-test
+
+on:
+  push:
+    branches:
+      - main
+      - feature/*
+      
+  workflow_dispatch:
+  pull_request:
+    branches:
+      - main
+
+  workflow_call:
+    secrets:
+      AZURE_CLIENT_ID:
+        required: true
+      AZURE_TENANT_ID:
+        required: true
+      AZURE_SUBSCRIPTION_ID:
+        required: true
+permissions:
+  contents: read
+  pull-requests: write
+  id-token: write
+  issues: write
+  checks: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: azure login
+        uses: azure/login@v1
+        with:
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_SUBSCRIPTION_ID: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+
+      - name: Key vault access
+        uses: actions/get-keyvault-secrets@v1
+        with:
+          keyvault: kv-dre-test
