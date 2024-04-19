@@ -47,4 +47,9 @@ jobs:
         with:
           keyvault: kv-dre-test
           secrets: "*"
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: lisk keys
+        run: |
+          az keyvault key list --vault-name "kv-dre-test"
+          
+          
