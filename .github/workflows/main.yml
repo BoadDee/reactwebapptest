@@ -32,6 +32,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+        
 
       - name: azure login
         uses: azure/login@v1
@@ -61,4 +62,5 @@ jobs:
         with:
           repository: BoadDee/group31
           ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
     
