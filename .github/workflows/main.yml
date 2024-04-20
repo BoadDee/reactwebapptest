@@ -62,5 +62,5 @@ jobs:
         with:
           repository: BoadDee/group31
           ref: main
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_PAT }}
     
