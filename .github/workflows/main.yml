@@ -63,4 +63,7 @@ jobs:
           repository: BoadDee/group31
           #ref: main
           token: ${{ secrets.MY_PAT }}
+
+      - name: list contents of the repo
+        run: ls -R
     
