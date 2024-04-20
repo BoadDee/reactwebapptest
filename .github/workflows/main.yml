@@ -51,5 +51,14 @@ jobs:
       - name: lisk keys
         run: |
           az keyvault key list --vault-name "kv-dre-test"
-          
-          
+
+    
+  other_repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get another repo
+        uses: actions/checkout@v2
+        with:
+          repository: BoadDee/group31
+          ref: main
+    
