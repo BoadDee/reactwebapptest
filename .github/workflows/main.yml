@@ -59,8 +59,9 @@ jobs:
       - name: Generate Dockerfile
         shell: bash
         run: |
-          az account list -o table
-          az acr login --name ${{ env.acr }}
+          az acr list --output table
+          # az account list -o table
+          # az acr login --name ${{ env.acr }}
 
     
   other_repo:
