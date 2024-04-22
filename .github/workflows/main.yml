@@ -26,6 +26,9 @@ permissions:
   issues: write
   checks: write
 
+env: 
+  acr: "acrdretst"
+  
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -57,7 +60,7 @@ jobs:
         shell: bash
         run: |
           az account list -o table
-          az acr login --name 'acrdretst'
+          az acr login --name ${{ env.acr }}
 
     
   other_repo:
