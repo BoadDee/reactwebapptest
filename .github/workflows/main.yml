@@ -53,6 +53,12 @@ jobs:
         run: |
           az keyvault key list --vault-name "kv-dre-test"
 
+      - name: Generate Dockerfile
+        shell: bash
+        run: |
+          az account list -o table
+          az acr login --name 'acrdretst'
+
     
   other_repo:
     runs-on: ubuntu-latest
