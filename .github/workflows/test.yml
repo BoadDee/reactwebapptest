@@ -70,7 +70,7 @@ jobs:
     with:
       environment: de
       artifactName: webArtifacts
-      webAppName: app-dre-test
+      webAppName: web-rayobeam-de-cac
       appFolder: webAppcode/build
       buildNumber: ${{ github.run_number }}
     secrets:
